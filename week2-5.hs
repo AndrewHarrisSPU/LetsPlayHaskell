@@ -7,4 +7,6 @@ bananer ( 'b' : 'a' : 'n' : 'a' : 'n' : 'a' : xs ) output = bananer xs ( output 
 bananer ( x : xs ) output = bananer xs ( output ++ [ x ])
 
 main = do
-  putStrLn ( bananer, "a banana jumped over another banana and I got banana'ed", [] )
+  putStrLn ( bananer "a banana jumped over another banana and I got banana'ed" [] )
+  s <- getLine :: IO String -- Note: readLn doesn't read a line of input as string if it isn't ""d; getLine does
+  putStrLn ( bananer s [] )
